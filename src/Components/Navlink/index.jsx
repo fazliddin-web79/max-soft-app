@@ -9,20 +9,20 @@ const Navlink = ({ data }) => {
   const [option, setOption] = useState(true);
   return (
     <Wrap>
-      <Container data={option}>
+      <Container data={option.toString()}>
         <Link to={data.path}>
           <Container.Left>
             <Icon Img={data.img} />
             <Container.Title>{data.title}</Container.Title>
           </Container.Left>
         </Link>
-        {data.options && (
+        {data?.options && (
           <Container.Btn onClick={() => setOption(!option)}>
             <img src={option ? down : up} alt="down" />
           </Container.Btn>
         )}
       </Container>
-      {data.options && !option && (
+      {data?.options && !option && (
         <Wrap.Option>
           {data.options.map((item, index) => {
             return (

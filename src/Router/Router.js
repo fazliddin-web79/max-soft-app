@@ -6,10 +6,12 @@ import { sidebarLink } from "../Utils/sidebar";
 import { sidebarLinkDown } from "../Utils/sidebar-down";
 import { Navigate } from "react-router-dom";
 import NotFound from "../Pages/NotFound";
+import SignUp from "../Pages/SignUp";
 import SignIn from "../Pages/SignIn";
 const Router = () => {
   return (
     <Routes>
+      <Route path="sign-up" element={<SignUp />} />
       <Route path="sign-in" element={<SignIn />} />
       <Route path={"/"} element={<Navigate to={"/overview"} />} />
       <Route path="/" element={<Navbar />}>

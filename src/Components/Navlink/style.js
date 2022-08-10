@@ -20,8 +20,8 @@ export const Container = styled.div`
   padding: 5px 15px;
   width: 225px;
   margin: 10px auto;
-  background: ${(props) => (props.data ? "none" : "#F3F4F6")};
-  border-radius: ${(props) => (props.data ? "none" : "12px")};
+  background: ${(props) => (props.data == "true" ? "none" : "#F3F4F6")};
+  border-radius: ${(props) => (props.data == "true" ? "none" : "12px")};
 `;
 Container.Left = styled.div`
   display: flex;
