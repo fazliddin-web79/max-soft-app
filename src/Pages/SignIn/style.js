@@ -62,7 +62,7 @@ Right.Wrap = styled.div`
 Right.Btn = styled.div`
   margin: 10px auto;
   width: 240px;
-  height: 80px;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;

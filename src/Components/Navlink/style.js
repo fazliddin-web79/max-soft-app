@@ -3,6 +3,18 @@ import styled from "styled-components";
 export const Wrap = styled.div`
   width: 100%;
   transition: all 0.3s ease;
+  ${(props) => {
+    return props.data
+      ? `
+    h1 {
+      color: #0e9f6e;
+    }
+    path {
+      fill: #0e9f6e;
+    }
+    `
+      : "";
+  }}
   :hover {
     h1 {
       color: #0e9f6e;
@@ -20,8 +32,8 @@ export const Container = styled.div`
   padding: 5px 15px;
   width: 225px;
   margin: 10px auto;
-  background: ${(props) => (props.data == "true" ? "none" : "#F3F4F6")};
-  border-radius: ${(props) => (props.data == "true" ? "none" : "12px")};
+  background: ${(props) => (props.data === "true" ? "none" : "#F3F4F6")};
+  border-radius: ${(props) => (props.data === "true" ? "none" : "12px")};
 `;
 Container.Left = styled.div`
   display: flex;

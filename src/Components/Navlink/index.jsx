@@ -1,14 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Icon from "../Icon";
 import { Container, Options, Wrap } from "./style";
 import up from "../../Assets/icon/up.svg";
 import down from "../../Assets/icon/down.svg";
 import { NavLink as Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const Navlink = ({ data }) => {
   const [option, setOption] = useState(true);
+  const [active, setActive] = useState("");
+  const location = useLocation();
+  useEffect(() => {
+    if (location.pathname.includes(data.path)) {
+      setActive("active");
+    } else {
+      setActive("");
+    }
+  }, [location, data.path]);
   return (
-    <Wrap>
+    <Wrap data={active}>
       <Container data={option.toString()}>
         <Link to={data.path}>
           <Container.Left>

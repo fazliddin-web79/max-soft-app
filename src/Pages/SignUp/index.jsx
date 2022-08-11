@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { signInWithGoogle } from "../../firebase";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../firebase.js";
+import { createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { auth, provider } from "../../firebase.js";
 import { Container, Left, Right, Title, Wrap } from "./style";
 import loginImg from "../../Assets/img/sign-in.jpg";
 import google from "../../Assets/img/google.png";
 import { useNavigate } from "react-router-dom";
+import { getUser } from "../../Redux/user";
+import { useDispatch } from "react-redux";
 
 const SignUp = () => {
   const [registerEmail, setRegisterEmail] = useState("");
@@ -13,6 +14,7 @@ const SignUp = () => {
   const [registerPasswordConf, setRegisterPasswordConf] = useState("");
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const signUp = () => {
     if (
@@ -38,10 +40,36 @@ const SignUp = () => {
       );
       console.log(user);
       setMessage("");
+      dispatch(
+        getUser({
+          email: user.user.email,
+          displayName: user.user.displayName,
+          photoURL: user.user.photoURL,
+          uid: user.user.uid,
+        })
+      );
       navigate("/overview");
     } catch (error) {
       setMessage(error.message);
     }
+  };
+
+  const registrGoogle = () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        dispatch(
+          getUser({
+            email: result.user.email,
+            displayName: result.user.displayName,
+            photoURL: result.user.photoURL,
+            uid: result.user.uid,
+          })
+        );
+        navigate("/overview");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
@@ -99,7 +127,7 @@ const SignUp = () => {
             page
           </Right.Link>
 
-          <Right.Btn onClick={signInWithGoogle}>
+          <Right.Btn onClick={registrGoogle}>
             <img src={google} alt="google logo" />
             Sign Up with Google
           </Right.Btn>

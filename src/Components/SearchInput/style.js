@@ -13,6 +13,9 @@ export const Container = styled.div`
   flex-grow: 0;
   display: flex;
   align-items: center;
+  :focus {
+    border: 1px solid green;
+  }
   img {
     width: 20px;
     height: 20px;

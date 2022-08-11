@@ -23,6 +23,26 @@ Container.Left = styled.div`
 Container.Right = styled.div`
   display: flex;
   align-items: center;
-  width: 75px;
+  width: fit-content;
   justify-content: space-between;
+`;
+
+Container.Registr = styled.div`
+  cursor: pointer;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  color: white;
+  letter-spacing: 2px;
+  margin-left: 10px;
+  border-radius: 8px;
+  padding: 5px 7px;
+  background-color: #0e9f6e;
+  :hover {
+    color: #0e9f6e;
+    background-color: white;
+    border: 2px solid #0e9f6e;
+    transform: scale(0.98);
+  }
 `;
