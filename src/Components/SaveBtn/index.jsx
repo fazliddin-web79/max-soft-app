@@ -1,8 +1,8 @@
 import React from "react";
 import { Container } from "./style";
 
-const SaveBtn = ({ title }) => {
-  return <Container>{title}</Container>;
+const SaveBtn = ({ title, onClick }) => {
+  return <Container onClick={onClick}>{title}</Container>;
 };
 
 export default SaveBtn;

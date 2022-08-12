@@ -1,9 +1,9 @@
 import React from "react";
 import { Container } from "./style";
 
-const ImgForUser = ({ img }) => {
+const ImgForUser = ({ img, onClick }) => {
   return (
-    <Container>
+    <Container onClick={() => onClick(img)}>
       <img src={img} alt="user avatar" />
     </Container>
   );

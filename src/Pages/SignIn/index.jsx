@@ -49,11 +49,11 @@ const SignIn = () => {
             uid: result.user.uid,
           })
         );
-        navigate("/overview");
       })
       .catch((error) => {
         console.log(error);
       });
+    navigate("/overview");
   };
 
   return (

@@ -48,8 +48,9 @@ const Messages = () => {
       createdAt: serverTimestamp(),
     };
     const colRef = collection(db, "messages");
-    addDoc(colRef, docData);
-    setMsg("");
+    addDoc(colRef, docData).then(() => {
+      setMsg("");
+    });
   };
 
   return user ? (
@@ -63,6 +64,7 @@ const Messages = () => {
         <textarea
           type="text"
           placeholder="Message ..."
+          value={msg}
           onChange={(e) => setMsg(e.target.value)}
         ></textarea>
         <button onClick={onSubmit}>

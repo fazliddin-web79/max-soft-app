@@ -83,7 +83,9 @@ Wrap.Title = styled.h1`
 
 Wrap.ImgWrap = styled.div`
   ${(props) => {
-    return props.disebled ? "background-color: #F3F4F6;" : "";
+    return props.disebled
+      ? "background-color: #F3F4F6;"
+      : "background: #DEF7EC;";
   }}
   margin: 15px auto;
   padding: 15px 0px;

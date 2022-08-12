@@ -48,10 +48,10 @@ const SignUp = () => {
           uid: user.user.uid,
         })
       );
-      navigate("/overview");
     } catch (error) {
       setMessage(error.message);
     }
+    navigate("/overview");
   };
 
   const registrGoogle = () => {
