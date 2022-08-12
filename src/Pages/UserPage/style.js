@@ -24,7 +24,21 @@ export const Wrap = styled.div`
     border: 1px solid #e1effe;
   }
 `;
-export const Error = styled.div``;
+export const Error = styled.div`
+  background: #ffffff;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.06), 0px 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  margin: 16px;
+  height: 250px;
+  padding: 15px 20px;
+  span {
+    color: #0e9f6e;
+    cursor: pointer;
+    :hover {
+      text-decoration: underline;
+    }
+  }
+`;
 
 Wrap.User = styled.div`
   display: flex;

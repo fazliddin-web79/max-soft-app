@@ -9,9 +9,12 @@ import ImgForUser from "../../Components/ImgForUser";
 import { imgUsers } from "../../Mock/imgForUser";
 import SaveBtn from "../../Components/SaveBtn";
 import { updateEmail, updatePassword, updateProfile } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 const UserPage = () => {
   const [user] = useAuthState(auth);
+
+  const navigate = useNavigate();
 
   //State for user displayName
 
@@ -99,7 +102,13 @@ const UserPage = () => {
   return (
     <div>
       {!user ? (
-        <Error></Error>
+        <Error>
+          <h1>
+            Sorry, You are not registered, Please{" "}
+            <span onClick={() => navigate("/sign-in")}>Sign In</span> to see all
+            User Setting.
+          </h1>
+        </Error>
       ) : (
         <Container>
           <Container.Left>
