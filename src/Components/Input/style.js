@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  margin: 10px auto;
   input {
     outline: none;
     padding: 5px 10px;
@@ -13,6 +14,9 @@ export const Container = styled.div`
     font-size: 16px;
     line-height: 150%;
     color: #6b7280;
+    :disabled {
+      border: 1px solid #f3f4f6;
+    }
     :focus {
       border: 1px solid #1c64f2;
       color: #1c64f2;
