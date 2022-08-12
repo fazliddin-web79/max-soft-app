@@ -22,7 +22,6 @@ const SignIn = () => {
         loginEmail,
         loginPassword
       );
-      console.log(user.user.email);
       navigate("/overview");
       setMessage("");
       dispatch(
@@ -49,11 +48,12 @@ const SignIn = () => {
             uid: result.user.uid,
           })
         );
+
+        navigate("/overview");
       })
       .catch((error) => {
         console.log(error);
       });
-    navigate("/overview");
   };
 
   return (

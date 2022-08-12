@@ -38,8 +38,8 @@ const SignUp = () => {
         registerEmail,
         registerPassword
       );
-      console.log(user);
       setMessage("");
+      navigate("/overview");
       dispatch(
         getUser({
           email: user.user.email,
@@ -51,7 +51,6 @@ const SignUp = () => {
     } catch (error) {
       setMessage(error.message);
     }
-    navigate("/overview");
   };
 
   const registrGoogle = () => {
