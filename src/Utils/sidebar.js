@@ -6,6 +6,7 @@ import { ReactComponent as locked } from "../Assets/icon/lock-closed.svg";
 import Generic from "../Pages/Generic";
 import Home from "../Pages/Home";
 import Messages from "../Pages/Messages";
+import UserPage from "../Pages/UserPage";
 
 export const sidebarLink = [
   {
@@ -54,7 +55,7 @@ export const sidebarLink = [
   {
     id: 5,
     path: "/authentication",
-    element: <Generic />,
+    element: <UserPage />,
 
     img: locked,
     title: "Authentication",

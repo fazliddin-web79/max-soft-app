@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, memo } from "react";
 import Icon from "../Icon";
 import { Container, Options, Wrap } from "./style";
 import up from "../../Assets/icon/up.svg";
@@ -47,4 +47,4 @@ const Navlink = ({ data }) => {
   );
 };
 
-export default Navlink;
+export default memo(Navlink);
