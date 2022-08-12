@@ -1,13 +1,15 @@
 import React from "react";
-import "./style.css";
 import { useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { Container } from "./style";
 
 const Generic = () => {
   const location = useLocation();
+  const darkMode = useSelector((store) => store.user.darkMode);
   return (
-    <div className="generic-wrap">
+    <Container darkMode={darkMode}>
       Ooops, sorry! <span>{location.pathname}</span> This page is coming soon
-    </div>
+    </Container>
   );
 };
 

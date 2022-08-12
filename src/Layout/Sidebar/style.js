@@ -6,7 +6,7 @@ export const Container = styled.div`
   left: 0;
   z-index: 998;
   height: calc(100vh - 70px);
-  width: 250px;
+  width: ${(props) => (props.open ? "250px" : "60px")};
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -18,6 +18,17 @@ export const Container = styled.div`
   }
 
   border-right: 1px solid #e5e7eb;
+  ${(props) =>
+    props.darkMode
+      ? `
+  
+  background-color: #1f2a37;
+  
+  path{
+    fill:white;
+  }
+  `
+      : ""}
 `;
 
 Container.Wrap = styled.div`
@@ -36,4 +47,5 @@ Container.Footer = styled.div`
   align-items: center;
   justify-content: space-around;
   padding: 10px;
+  ${(props) => (props.open ? "" : "display:none;")}
 `;

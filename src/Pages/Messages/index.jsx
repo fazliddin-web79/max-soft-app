@@ -16,13 +16,17 @@ import Icon from "../../Components/Icon";
 import { ReactComponent as sent } from "../../Assets/icon/send.svg";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Messages = () => {
   const [user] = useAuthState(auth);
   const [messages, setMessages] = useState([]);
   const [msg, setMsg] = useState("");
   const [update, setUpdate] = useState(true);
+
   const navigate = useNavigate();
+
+  const open = useSelector((store) => store.sidebar.sidebarOpen);
 
   useEffect(() => {
     const col = collection(db, "messages");
@@ -35,7 +39,9 @@ const Messages = () => {
       setMessages(message);
     });
   }, [update]);
-  console.log(messages);
+
+  //submit
+
   const onSubmit = () => {
     setUpdate(serverTimestamp());
     const docData = {
@@ -47,7 +53,9 @@ const Messages = () => {
       userImg: auth.currentUser.photoURL,
       createdAt: serverTimestamp(),
     };
+
     const colRef = collection(db, "messages");
+
     addDoc(colRef, docData).then(() => {
       setMsg("");
     });
@@ -60,7 +68,7 @@ const Messages = () => {
           <Message key={item.id} data={item} />
         ))}
       </Wrap>
-      <Send>
+      <Send open={open}>
         <textarea
           type="text"
           placeholder="Message ..."

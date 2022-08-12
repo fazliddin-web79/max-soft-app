@@ -32,8 +32,47 @@ export const Container = styled.div`
   padding: 5px 15px;
   width: 225px;
   margin: 10px auto;
-  background: ${(props) => (props.data === "true" ? "none" : "#F3F4F6")};
-  border-radius: ${(props) => (props.data === "true" ? "none" : "12px")};
+  :hover {
+    ${(props) => {
+      return !props.open
+        ? `
+    h1{
+      display: block;
+      position: absolute;
+      left: 45px;
+      z-index: 998;
+      padding: 10px 15px;
+      background-color: white;
+      border:1px solid #0e9f6e;
+      border-radius: 0px 12px 12px 12px;
+    }
+    `
+        : "";
+    }}
+  }
+  background: ${(props) =>
+    props.data === "true" ? "none" : props.open ? "#F3F4F6" : "white"};
+  border-radius: ${(props) =>
+    props.data === "true" ? "none" : props.open ? "12px" : ""};
+
+  ${(props) => {
+    return !props.open
+      ? `
+    h1{
+      display: none;
+    }
+    `
+      : "";
+  }}
+
+  ${(props) =>
+    props.open
+      ? ""
+      : props.active
+      ? `
+    border-left: 3px solid #0e9f6e;
+    `
+      : ""}
 `;
 Container.Left = styled.div`
   display: flex;

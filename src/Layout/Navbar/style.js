@@ -12,8 +12,22 @@ export const Container = styled.div`
 
   width: 100%;
   height: 70px;
-  background-color: #ffffff;
   border-bottom: 1px solid #e5e7eb;
+  ${(props) =>
+    props.darkMode
+      ? `
+  
+  background-color: #1f2a37;
+  img{
+    background-color: white;
+    padding: 5px;
+    border-radius: 50%;
+  }
+  path{
+    fill:white;
+  }
+  `
+      : ""}
 `;
 
 Container.Left = styled.div`

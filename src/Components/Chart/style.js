@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  background-color: white;
+  background-color: ${(props) => (props.darkMode ? `#1f2a37` : "white")};
   width: calc(100% - 32px);
   padding: 20px;
   margin: 16px;

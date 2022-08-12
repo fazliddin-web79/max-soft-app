@@ -7,10 +7,10 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
+  background-color: ${(props) => (props.darkMode ? `#1f2a37` : "white")};
   border-radius: 16px;
-  color: #6b7280;
   font-family: "Inter";
+  color: ${(props) => (props.darkMode ? `white` : "#6b7280")};
   font-style: normal;
   font-weight: 400;
   font-size: 16px;

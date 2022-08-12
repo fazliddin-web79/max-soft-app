@@ -5,6 +5,19 @@ export const Container = styled.div`
 `;
 
 export const Wrapper = styled.div`
-  width: calc(100% - 250px);
+  width: ${(props) =>
+    props.open ? "calc(100% - 250px);" : "calc(100% - 60px);"};
   background: #e5e7eb;
+
+  ${(props) =>
+    props.darkMode
+      ? `
+  
+  background-color: #88909d;
+
+  path{
+    fill:white;
+  }
+  `
+      : ""}
 `;

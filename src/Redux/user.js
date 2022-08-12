@@ -4,14 +4,17 @@ export const userSlice = createSlice({
   name: "userData",
   initialState: {
     user: {},
+    darkMode: false,
   },
   reducers: {
     getUser: (state, payload) => {
       state.user = payload.payload;
-      console.log(state.user, "user from user reduser");
+    },
+    setDarkMode: (state, paylaod) => {
+      state.darkMode = !state.darkMode;
     },
   },
 });
 
-export const { getUser } = userSlice.actions;
+export const { getUser, setDarkMode } = userSlice.actions;
 export default userSlice.reducer;
