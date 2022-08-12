@@ -5,8 +5,6 @@ import { Container, Left, Right, Title, Wrap } from "./style";
 import loginImg from "../../Assets/img/sign-in.jpg";
 import google from "../../Assets/img/google.png";
 import { useNavigate } from "react-router-dom";
-import { getUser } from "../../Redux/user";
-import { useDispatch } from "react-redux";
 
 const SignUp = () => {
   const [registerEmail, setRegisterEmail] = useState("");
@@ -14,7 +12,6 @@ const SignUp = () => {
   const [registerPasswordConf, setRegisterPasswordConf] = useState("");
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
-  const dispatch = useDispatch();
 
   const signUp = () => {
     if (
@@ -40,30 +37,14 @@ const SignUp = () => {
       );
       setMessage("");
       navigate("/overview");
-      dispatch(
-        getUser({
-          email: user.user.email,
-          displayName: user.user.displayName,
-          photoURL: user.user.photoURL,
-          uid: user.user.uid,
-        })
-      );
     } catch (error) {
       setMessage(error.message);
     }
   };
 
-  const registrGoogle = () => {
+  const registrGoogle = async () => {
     signInWithPopup(auth, provider)
-      .then((result) => {
-        dispatch(
-          getUser({
-            email: result.user.email,
-            displayName: result.user.displayName,
-            photoURL: result.user.photoURL,
-            uid: result.user.uid,
-          })
-        );
+      .then(() => {
         navigate("/overview");
       })
       .catch((error) => {
