@@ -62,6 +62,10 @@ export const Send = styled.div`
       }
     }
   }
+
+  @media (max-width: 576px) {
+    width: calc(100% - 32px);
+  }
 `;
 
 export const NotUser = styled.div`
