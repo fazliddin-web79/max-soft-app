@@ -137,6 +137,9 @@ const UserPage = () => {
             <Wrap>
               <Wrap.TitleWrap>
                 <Wrap.Title>
+                  <li>Antd design</li>
+                  <li>Google Firebase </li>
+                  <li>Styled-components</li>
                   <ImgForUser
                     img={photoURL ? photoURL : auth.currentUser.photoURL}
                   />{" "}

@@ -9,7 +9,9 @@ h1 {
 }
 
 body {
-  background-color: #e5e5e5;
+  width: 100%;
+  height: 100vh;
+  background-color: aliceblue;
 }
 h1 {
   margin: 0;
@@ -19,8 +21,13 @@ h1 {
   display: none;
 }
 
-/* //style-for navbar */
+#root {
+  margin: 0 auto;
+  width: 1600px;
+  background-color: #e5e5e5;
+}
 
+/* //style-for navbar */
 .user-navbar {
   display: flex;
   justify-content: space-between;
@@ -30,6 +37,11 @@ h1 {
 
 .menu-responsive {
   display: none;
+}
+@media screen and (max-width: 1600px) {
+  #root {
+    width: 100%;
+  }
 }
 @media screen and (max-width: 576px) {
   .menu-active {

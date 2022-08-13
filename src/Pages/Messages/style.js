@@ -20,8 +20,7 @@ export const Send = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 15px;
-  width: ${(props) =>
-    props.open ? "calc(100% - 282px);" : "calc(100% - 92px);"};
+  width: 100%;
   position: sticky;
   bottom: 0;
   background: #ffffff;

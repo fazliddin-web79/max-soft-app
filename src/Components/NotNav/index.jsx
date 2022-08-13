@@ -4,8 +4,10 @@ import Icon from "../Icon";
 import Logo from "../Logo";
 import { Container, Left, Right, Link } from "./style";
 import { ReactComponent as login } from "../../Assets/icon/login.svg";
+import { useNavigate } from "react-router-dom";
 
 const NotNav = () => {
+  const navigate = useNavigate();
   return (
     <Container>
       <Left>
@@ -22,7 +24,8 @@ const NotNav = () => {
         </Left.Wrap>
       </Left>
       <Right>
-        <Icon Img={login} /> <span>Login/Register</span>
+        <Icon Img={login} />{" "}
+        <span onClick={() => navigate("/sign-in")}>Login/Register</span>
       </Right>
     </Container>
   );
