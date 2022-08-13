@@ -66,6 +66,9 @@ Right.Wrap = styled.div`
   height: 120px;
   width: 380px;
   padding: 5px 5px;
+  @media (max-width: 576px) {
+    width: 100%;
+  }
 `;
 Right.Btn = styled.div`
   margin: 10px auto;

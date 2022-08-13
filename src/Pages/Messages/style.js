@@ -8,8 +8,9 @@ export const Container = styled.div`
 
 export const Wrap = styled.div`
   position: relative;
-  bottom: 0;
-  overflow: scroll;
+  left: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
   width: 100%;
   height: calc(100vh - 180px);
 `;
