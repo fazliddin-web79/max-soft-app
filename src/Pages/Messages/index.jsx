@@ -25,7 +25,7 @@ const Messages = () => {
   const [update, setUpdate] = useState(true);
 
   const navigate = useNavigate();
-
+  const darkMode = useSelector((store) => store.user.darkMode);
   const open = useSelector((store) => store.sidebar.sidebarOpen);
 
   useEffect(() => {
@@ -82,7 +82,7 @@ const Messages = () => {
       </Send>
     </Container>
   ) : (
-    <NotUser>
+    <NotUser darkMode={darkMode}>
       <h1>
         Sorry, You are not registered, Please{" "}
         <span onClick={() => navigate("/sign-in")}>Sign In</span> to see all

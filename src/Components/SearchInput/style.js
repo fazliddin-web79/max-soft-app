@@ -30,4 +30,7 @@ export const Container = styled.div`
     font-size: 16px;
     color: #6b7280;
   }
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;

@@ -12,6 +12,16 @@ export const Container = styled.div`
     height: 450px;
     top: -35px;
   }
+  @media (max-width: 576px) {
+    width: 70%;
+    margin: 0 auto;
+    img {
+      height: 250px;
+    }
+    h1 {
+      font-size: 32px;
+    }
+  }
 `;
 
 Container.Title = styled.h1`

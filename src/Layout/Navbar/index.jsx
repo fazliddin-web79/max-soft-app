@@ -11,8 +11,9 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../firebase";
 import { signOut } from "firebase/auth";
 import { ReactComponent as menu } from "../../Assets/icon/menu.svg";
+import { ReactComponent as menu1 } from "../../Assets/icon/menu1.svg";
 import { useDispatch, useSelector } from "react-redux";
-import { sidebarActive } from "../../Redux/sidebar";
+import { sidebarActive, sidebarActiveResponsive } from "../../Redux/sidebar";
 import DarkMode from "../../Components/DarkMode";
 
 const Navbar = () => {
@@ -28,7 +29,16 @@ const Navbar = () => {
       <Container darkMode={darkMode}>
         <Container.Left>
           <Logo />
-          <span onClick={() => dispatch(sidebarActive())}>
+          <span
+            className="menu-responsive"
+            onClick={() => dispatch(sidebarActiveResponsive())}
+          >
+            <Icon Img={menu1} width={"32px"} />
+          </span>
+          <span
+            className="menu-active"
+            onClick={() => dispatch(sidebarActive())}
+          >
             <Icon Img={menu} width={"32px"} />
           </span>
           <SearchInput />

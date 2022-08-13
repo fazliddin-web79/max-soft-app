@@ -8,6 +8,7 @@ export const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
+  background-color: white;
 `;
 
 export const Left = styled.div`
@@ -18,6 +19,10 @@ export const Left = styled.div`
 
 Left.Wrap = styled.div`
   margin-left: 25px;
+
+  @media (max-width: 576px) {
+    display: none;
+  }
 `;
 export const Right = styled.div`
   display: flex;

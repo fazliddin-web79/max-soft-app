@@ -11,6 +11,7 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  background-color: white;
   hr {
     width: 100%;
     border: 0.5px solid #e5e7eb;
@@ -29,6 +30,30 @@ export const Container = styled.div`
   }
   `
       : ""}
+
+  @media (max-width: 576px) {
+    display: none;
+    ${(props) => {
+      return props.responsive
+        ? `
+      display: block;
+    position: fixed;
+    z-index: 998;
+    left: 0;
+    transform-origin: left;
+  animation: example 0.2s ease;
+  @keyframes example {
+    0% {
+      transform: scaleX(0);
+    }
+    100% {
+      transform: scaleX(1);
+    }
+  }
+      `
+        : "";
+    }}
+  }
 `;
 
 Container.Wrap = styled.div`

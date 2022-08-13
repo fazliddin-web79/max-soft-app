@@ -38,6 +38,10 @@ export const Error = styled.div`
       text-decoration: underline;
     }
   }
+  background-color: ${(props) => (props.darkMode ? `#1f2a37` : "white")};
+  h1 {
+    color: ${(props) => (props.darkMode ? `white` : "#111827")};
+  }
 `;
 
 Wrap.User = styled.div`

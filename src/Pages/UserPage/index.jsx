@@ -10,8 +10,10 @@ import { imgUsers } from "../../Mock/imgForUser";
 import SaveBtn from "../../Components/SaveBtn";
 import { updateEmail, updatePassword, updateProfile } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const UserPage = () => {
+  const darkMode = useSelector((store) => store.user.darkMode);
   const [user] = useAuthState(auth);
 
   const navigate = useNavigate();
@@ -102,7 +104,7 @@ const UserPage = () => {
   return (
     <div>
       {!user ? (
-        <Error>
+        <Error darkMode={darkMode}>
           <h1>
             Sorry, You are not registered, Please{" "}
             <span onClick={() => navigate("/sign-in")}>Sign In</span> to see all

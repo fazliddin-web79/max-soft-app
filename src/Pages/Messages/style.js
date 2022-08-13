@@ -65,12 +65,17 @@ export const Send = styled.div`
 `;
 
 export const NotUser = styled.div`
-  background: #ffffff;
+  background-color: ${(props) => (props.darkMode ? `#1f2a37` : "white")};
+
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.06), 0px 1px 3px rgba(0, 0, 0, 0.1);
   border-radius: 16px;
   margin: 16px;
-  height: 250px;
+  min-height: 250px;
   padding: 15px 20px;
+
+  h1 {
+    color: ${(props) => (props.darkMode ? `white` : "#111827")};
+  }
   span {
     color: #0e9f6e;
     cursor: pointer;

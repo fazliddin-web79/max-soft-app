@@ -20,4 +20,9 @@ export const Wrapper = styled.div`
   }
   `
       : ""}
+
+  @media (max-width: 576px) {
+    width: calc(100%);
+    min-height: calc(100vh - 70px);
+  }
 `;

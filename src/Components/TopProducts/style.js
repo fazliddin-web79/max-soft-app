@@ -5,7 +5,7 @@ export const Container = styled.div`
   margin-top: 0px;
   margin-left: 0px;
   padding: 24px;
-  background-color: white;
+  background-color: ${(props) => (props.darkMode ? `#1f2a37` : "white")};
   border-radius: 16px;
   min-width: calc(100% - 398px);
   width: calc(100% - 398px);
@@ -25,5 +25,5 @@ Container.Title = styled.h1`
   font-weight: 600;
   font-size: 20px;
   margin: 0;
-  color: #111827;
+  color: ${(props) => (props.darkMode ? `white` : "#111827")};
 `;

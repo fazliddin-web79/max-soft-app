@@ -19,6 +19,9 @@ export const Left = styled.div`
   img {
     width: 600px;
   }
+  @media (max-width: 576px) {
+    display: none;
+  }
 `;
 export const Right = styled.div`
   height: 100vh;
@@ -26,8 +29,10 @@ export const Right = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 576px) {
+    width: 100%;
+  }
 `;
-
 export const Title = styled.h1`
   margin: 0 auto;
   color: #0e9f6e;
@@ -43,6 +48,9 @@ export const Wrap = styled.div`
   background: #ffffff;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.06), 0px 1px 3px rgba(0, 0, 0, 0.1);
   border-radius: 16px;
+  @media (max-width: 576px) {
+    width: calc(100% - 32px);
+  }
 `;
 
 Right.Title = styled.h1`

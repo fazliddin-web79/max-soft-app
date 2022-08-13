@@ -12,8 +12,10 @@ import { useSelector } from "react-redux/";
 const Sidebar = () => {
   const open = useSelector((store) => store.sidebar.sidebarOpen);
   const darkMode = useSelector((store) => store.user.darkMode);
+  const responsive = useSelector((store) => store.sidebar.sidebarResponsive);
+
   return (
-    <Container open={open} darkMode={darkMode}>
+    <Container responsive={responsive} open={open} darkMode={darkMode}>
       <Container.Wrap>
         {sidebarLink.map((item) => {
           return <Navlink key={item.id} data={item} />;
