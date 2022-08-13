@@ -5,12 +5,21 @@ export const Container = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   padding: 16px;
+  @media (max-width: 576px) {
+    flex-direction: column;
+  }
 `;
 Container.Left = styled.div`
   width: calc(50% - 8px);
+  @media (max-width: 576px) {
+    width: 100%;
+  }
 `;
 Container.Right = styled.div`
   width: calc(50% - 8px);
+  @media (max-width: 576px) {
+    width: 100%;
+  }
 `;
 
 export const Wrap = styled.div`

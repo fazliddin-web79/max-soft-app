@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Icon from "../../Components/Icon";
 import Navlink from "../../Components/Navlink";
 import { sidebarLink } from "../../Utils/sidebar";
@@ -14,6 +14,10 @@ const Sidebar = () => {
   const darkMode = useSelector((store) => store.user.darkMode);
   const responsive = useSelector((store) => store.sidebar.sidebarResponsive);
 
+  useEffect(() => {
+    if (responsive) document.body.style.overflow = "hidden";
+    else document.body.style.overflow = "unset";
+  }, [responsive]);
   return (
     <Container responsive={responsive} open={open} darkMode={darkMode}>
       <Container.Wrap>

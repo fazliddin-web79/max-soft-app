@@ -59,4 +59,8 @@ Container.Registr = styled.div`
     border: 2px solid #0e9f6e;
     transform: scale(0.98);
   }
+
+  @media (max-width: 350px) {
+    display: none;
+  }
 `;
