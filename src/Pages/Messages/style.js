@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  height: 100%;
+  height: calc(100vh - 70px);
   width: 100%;
   padding: 16px;
 `;
@@ -9,8 +9,9 @@ export const Container = styled.div`
 export const Wrap = styled.div`
   position: relative;
   bottom: 0;
+  overflow: scroll;
   width: 100%;
-  margin-bottom: 75px;
+  height: calc(100vh - 180px);
 `;
 
 export const Send = styled.div`
@@ -20,11 +21,12 @@ export const Send = styled.div`
   padding: 15px;
   width: ${(props) =>
     props.open ? "calc(100% - 282px);" : "calc(100% - 92px);"};
-  position: fixed;
+  position: sticky;
   bottom: 0;
   background: #ffffff;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.06), 0px 1px 3px rgba(0, 0, 0, 0.1);
   border-radius: 16px;
+  height: 80px;
   textarea {
     font-family: "Inter";
     font-style: normal;
@@ -64,7 +66,8 @@ export const Send = styled.div`
   }
 
   @media (max-width: 576px) {
-    width: calc(100% - 32px);
+    width: 100%;
+    margin: 0px;
   }
 `;
 
